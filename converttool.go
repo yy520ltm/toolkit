@@ -7,8 +7,7 @@ import (
 	"strconv"
 	"unsafe"
 )
-func test(){
-}
+
 //byte数组转 int32
 func BytesToInt32(buf []byte) int32 {
 	return int32(binary.BigEndian.Uint32(buf))
