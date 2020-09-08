@@ -15,7 +15,7 @@ var db *sql.DB
 //初始化数据库连接 建议放在main init()中
 func InitDB() (err error) {
 
-	dsn := "root:123123@tcp(127.0.0.1:3306)/animationBooks?charset=utf8"
+	dsn := "root:123123@tcp(127.0.0.1:3306)/XXXXXX?charset=utf8"
 
 	db, err = sql.Open("mysql", dsn)
 
