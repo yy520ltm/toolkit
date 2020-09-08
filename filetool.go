@@ -7,21 +7,19 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
-	
 )
 
-
-
-func WriteTxt(fileName string,txt string){
+func WriteTxt(fileName string, txt string) {
 	f, err := os.OpenFile(fileName, os.O_WRONLY|os.O_TRUNC, 0600)
 	defer f.Close()
 	if err != nil {
 		fmt.Println(err.Error())
 	} else {
-		_,err=f.Write([]byte(txt))
+		_, err = f.Write([]byte(txt))
 
 	}
 }
+
 //复制文件
 func Copy(src, dst string) (int64, error) {
 
@@ -58,7 +56,7 @@ func GetbookBypath(path string, progress float64) string {
 
 	defer func() { file.Close() }()
 
-	 ErrorMsg(err, 2, "oper file error:")
+	ErrorMsg(err, 2, "oper file error:")
 
 	//Stat返回一个描述name指定的文件对象的FileInfo
 	infos, _ := os.Stat(path)
@@ -148,7 +146,7 @@ func GetAllFiles(path string, dept int, fileext string, needDir bool) []string {
 		// 就像 tree一样 因此第一次进来时就不返回root了
 		err := filepath.Walk(path,
 			func(filename string, info os.FileInfo, err error) error {
-				otheroper.ErrorMsg(err, 2, "访问文件错误")
+				ErrorMsg(err, 2, "访问文件错误")
 				if root > 0 {
 					result := GetContanisDir(needDir, info, fileext)
 					if len(result) > 0 {
@@ -159,7 +157,7 @@ func GetAllFiles(path string, dept int, fileext string, needDir bool) []string {
 
 				return nil
 			})
-		otheroper.ErrorMsg(err, 2, "访问文件错误")
+		ErrorMsg(err, 2, "访问文件错误")
 
 	}
 
