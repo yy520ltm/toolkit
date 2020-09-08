@@ -1,8 +1,7 @@
-package goutils
+package toolkit
 
 import (
 	"crypto/md5"
-
 	crypt_rand "crypto/rand"
 	"encoding/binary"
 	"encoding/hex"
