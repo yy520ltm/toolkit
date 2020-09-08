@@ -1,4 +1,4 @@
-package goutils
+package toolkit
 
 //拆分4份
 //fmt.Println("println:",SplitArray(arr1,4))
