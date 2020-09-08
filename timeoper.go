@@ -1,4 +1,4 @@
-package goutils
+package toolkit
 
 import (
 	"time"
