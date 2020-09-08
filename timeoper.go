@@ -6,7 +6,6 @@ import (
 
 //获取当前时间直接之前或者之后 before，after
 //之前 -10s ，之后  10s
-
 func GetTimeBOrA(nowTime time.Time, timeStr string) time.Time {
 	t1, _ := time.ParseDuration(timeStr)
 	return nowTime.Add(t1)
