@@ -31,7 +31,7 @@ func Int64Byte2(num int64) []byte {
 	return []byte(strconv.FormatInt(num, 10))
 }
 
-//https://www.cnblogs.com/ghost240/p/3739785.html
+
 //string 转换成byte[]
 func StringTobytes(s string) []byte {
 	x := (*[2]uintptr)(unsafe.Pointer(&s))
